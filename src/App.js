@@ -1,8 +1,3 @@
-
-
-//const hash= "03247d10af559a64150bce620ec1f01e"
-
-//(`http://gateway.marvel.com/v1/public/characters?ts=1&apikey=f929fc77911a47c2a28a5fda5cb17dcb&hash=${hash}`)
 import './App.css';
 import Header from './components/Header'
 import CharacterTable from './components/CharacterTable'
@@ -31,8 +26,7 @@ function App() {
             setItems(favorite)
             setLoading(false)
           }
-          
-          
+                    
         }else{
           const result = await axios(`http://gateway.marvel.com/v1/public/characters?nameStartsWith=${query}&ts=1&apikey=f929fc77911a47c2a28a5fda5cb17dcb&hash=${hash}`)
           console.log(result.data.data.results)
@@ -53,5 +47,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
